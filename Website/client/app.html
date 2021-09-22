@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="img"></div>
+    <form class="form">
+        <h2>Total Bedroom</h2>
+        <div class="switch-field">
+            <input type="radio" id="radio-bedroom1" name="uiBedroom" value="1"/>
+            <label for="radio-bedroom1">1</label>
+            <input type="radio" id="radio-bedroom2" name="uiBedroom" value="2" checked/>
+            <label for="radio-bedroom2">2</label>
+            <input type="radio" id="radio-bedroom3" name="uiBedroom" value="3"/>
+            <label for="radio-bedroom3">3</label>
+            <input type="radio" id="radio-bedroom4" name="uiBedroom" value="4"/>
+            <label for="radio-bedroom4">4</label>
+            <input type="radio" id="radio-bedroom5" name="uiBedroom" value="5"/>
+            <label for="radio-bedroom5">5</label>
+        </div>
+    </form>
+    <form class="form">
+        <h2>Apart Size (sqm)</h2>
+            <input class="area"  type="text" id="uiApartSize" class="floatLabel" value="30">
+        <h2>Max Watt</h2>
+            <input class="area"  type="text" id="uiWatt" class="floatLabel" value="1000">
+        <h2>Furnish Type</h2>
+        <div>
+            <select class="furnish_type" name="" id="uiFurnishType">
+                <option value="" disabled="disabled" selected="selected">Choose a Type</option>
+                <option>Full Furnished</option>
+                <option>Unfurnished</option>
+            </select>
+        </div>
+        <h2>Kecamatan</h2>
+	    <div>
+            <select class="location" name="" id="uiLocations">
+                <option value="" disabled="disabled" selected="selected">Choose a Location</option>
+            </select>
+        </div>
+        <button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+        <div id="uiEstimatedPrice" class="result">	<h2></h2> </div>
+    </form>
+</body>
+</html>
