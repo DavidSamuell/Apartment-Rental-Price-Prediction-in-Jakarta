@@ -36,11 +36,11 @@ def load_saved_artifacts():
     global __locations
     global __model
     
-    with open("./columns.json", "r") as f:
+    with open("./Website/server/artifacts/columns.json", "r") as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[5:] 
 
-    with open('./travelio_apart.pickle', 'rb') as f:
+    with open('./Website/server/artifacts/travelio_apart.pickle', 'rb') as f:
         __model = pickle.load(f)
     # print("loading saved artifacts...done")
 
@@ -52,9 +52,7 @@ def get_data_columns():
 
 if __name__ == '__main__':
     load_saved_artifacts()
-
     
     # print(get_estimated_price(2, 54, 1500, 'Full Furnished', 'Tebet'))
     # print(get_estimated_price(2, 35, 1500, 'Unfurnished', 'Setiabudi'))
-    # print(get_estimated_price(3, 35, 1500, 'Unfurnished', 'Setiabudi'))
-    # print(get_estimated_price(4, 35, 1500, 'Unfurnished', 'Setiabudi'))
+
