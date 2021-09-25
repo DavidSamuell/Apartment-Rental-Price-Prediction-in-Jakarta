@@ -63,16 +63,16 @@ After scraping the data there are a lot of cleaning that need to be done so that
 - Parsed numeric data from price, apart size, max capacity, and max watt column.
 - Perform Iterative Imputing on missing Max Watt value. It estimate the most likely value using other features as predictor and fitting them into a Bayesian Ridge estimator.
 - Finding and replacing some locations that are undetected or wrongly assigned by Google Maps API. 
-- Removing outliers.*(I performed this quite late in my project, I think it would be best practice to apply it before I performed any feature engineering)*
+- Removing outliers. *I performed this quite late in my project, I think it would be best practice to apply it before I performed any feature engineering*
 
 ## EDA
 Here are some key highlights from performing EDA:
-1. Skewed distribution of continuous variable: ```Apart Size``` & ```Price```
+1. Skewed distribution of continuous variable: ```Apart Size``` & ```Price```.
  
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%201.1.png)
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%201.2.png)
 
-2. Presence of outlier in our ```Apart Size``` variable [insert scatter plot]
+2. Presence of outlier in our ```Apart Size``` variable [insert scatter plot].
 
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%202.png)
 
