@@ -79,6 +79,7 @@ Here are some key highlights from performing EDA:
 3. Multicollinearity among independent variables (```Total Bedroom```, ```Total Bathroom```, ```Apart Size```, and ```Max Capacity```). Features with high and low correlation to target variable.
 
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%203.png)
+
 4. Geocoding Address and plotting the heatmap distribution of prices in each locations. We can see that that apartment located in Central and South Jakarta region have a higher price distribution.
 
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%204.png)
@@ -100,8 +101,10 @@ First, I select the features that are going to be thrown into our model based on
 
 ## Model Performance
 Here are the performance from all of the five models, I put in their respective CV error and also training/test error and score to see how much variance they have.
+
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/Model%20Performance.png)
 
+From the results, we can see that the optimized XGBRegressor yields the lowest RMSE error of 0.208752 on 5-Fold Cross-Validation. It also has a relatively high variance with a training score of 0.933 and test score of only 0.835, this is probably caused due to the lack of data as the learning curve shows that the score is still rising alongside the number of training samples use.
 
 ## Productionization
 For the final productionization I pick the XGBRegressor model which shows the lowest RMSE cross-validation error amongst other model. I then build a flask API that was hosted on a local server. The API will take in http request with the list of values and return the estimated rental price. Finally, I build a simple UI using html, css, and js that will allow the user to enter their apartment information and once submitted will send a http request to the flask API which will return the estimated rental price and display it.
