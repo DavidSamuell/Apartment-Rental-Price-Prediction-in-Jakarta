@@ -65,10 +65,15 @@ After scraping the data there are a lot of cleaning that need to be done so that
 
 ## EDA
 Here are some key highlights from performing EDA:
-1. Skewed distribution of continous variable: *"Apart Size"* & *"Price"* [insert distplot and qq-plot]
+1. Skewed distribution of continous variable: *"Apart Size"* & *"Price"* 
+![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%201.1.png)
+![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%201.2.png)
 2. Presence of outlier in our *"Apart Size"* variable [insert scatter plot]
-3. Multicollinearity among independent variables. High correlated features and features with little to almost no correlation.[insert heatmap]
-4. Geocoding Address and plotting the heatmap distribution of prices in each locations. [insert gmap photo]
+![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%202.png)
+4. Multicollinearity among independent variables. High correlated features and features with little to almost no correlation
+![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%203.png)
+5. Geocoding Address and plotting the heatmap distribution of prices in each locations. 
+![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%204.png)
 
 ## Feature Engineering
 - Geocoding coordinates for each respective apartment address.
