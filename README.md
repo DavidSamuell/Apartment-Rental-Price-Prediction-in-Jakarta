@@ -67,14 +67,20 @@ After scraping the data there are a lot of cleaning that need to be done so that
 
 ## EDA
 Here are some key highlights from performing EDA:
-1. Skewed distribution of continous variable: ```Apart Size``` & ```Price``` 
+1. Skewed distribution of continuous variable: ```Apart Size``` & ```Price```
+ 
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%201.1.png)
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%201.2.png)
+
 2. Presence of outlier in our ```Apart Size``` variable [insert scatter plot]
+
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%202.png)
-4. Multicollinearity among independent variables (```Total Bedroom```, ```Total Bathroom```, ```Apart Size```, ```Max Capacity```). Features with high and low correlation to target variable.
+
+3. Multicollinearity among independent variables (```Total Bedroom```, ```Total Bathroom```, ```Apart Size```, and ```Max Capacity```). Features with high and low correlation to target variable.
+
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%203.png)
-5. Geocoding Address and plotting the heatmap distribution of prices in each locations. We can see that that location located in Central and South Jakarta region have a higher price distribution.
+4. Geocoding Address and plotting the heatmap distribution of prices in each locations. We can see that that apartment located in Central and South Jakarta region have a higher price distribution.
+
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%204.png)
 
 ## Feature Engineering
