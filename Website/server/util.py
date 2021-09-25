@@ -25,7 +25,7 @@ def get_estimated_price(bedroom, apt_size, max_watt, furnish_type, kecamatan):
     x[furnish_index] = 1
 
     #  Make Prediction
-    y_pred = __model.predict([x])
+    y_pred = __model.predict(np.array([x]))
     # Reverse log transform predicted price value 
     return int(np.exp(y_pred))
 
@@ -55,4 +55,3 @@ if __name__ == '__main__':
     
     # print(get_estimated_price(2, 54, 1500, 'Full Furnished', 'Tebet'))
     # print(get_estimated_price(2, 35, 1500, 'Unfurnished', 'Setiabudi'))
-

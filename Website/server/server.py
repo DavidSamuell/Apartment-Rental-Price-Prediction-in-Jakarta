@@ -12,7 +12,7 @@ def get_location_names():
 
     return response
 
-@app.route('/predict_home_price', methods=['GET', 'POST'])
+@app.route('/predict_home_price', methods=['POST'])
 def predict_home_price():
     bedroom = int(request.form['bedroom'])
     apt_size = float(request.form['apt_size'])
