@@ -40,7 +40,7 @@
 
 For the web scrapping process I decided to use Selenium since the travelio website require some user interaction to extract the necessary data. This is my first time trying out Selenium to scrape website and I learnt a lot of new stuff like performing action, extracting information, and how to deal with infinite scrolling page.
 
-The result of the scraping is stored in the *'travelio.csv'* file. The file contain 800+ apartment information where each row containing:
+The result of the scraping is stored in the **travelio.csv** file. The file contain 800+ apartment information where each row containing:
 * Name
 * Total Bedroom
 * Total Bathroom
