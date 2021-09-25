@@ -1,10 +1,10 @@
 # Apartment Rental Price Estimate in Jakarta: Project Overview
 * A tool that estimate monthly apartment rental prices in Jakarta. This could tool be use to help negotiate rental prices when finding an apartment to stay in Jakarta.
 * Scraped over 800 data of apartment in Jakarta using selenium on travelio.com website.
-* Perform cleaning on some columns: Integer extraction, remove row with missing value, and iterative imputing with Bayesian Ridge
-* EDA using various plot like distribution plot, histogram, scatter plot, heatmap, probplot, and geocoding.
-* Perform geocoding using Google Maps API; extract coordinates from addresses and plot them on a heatmap.
-* Various feature engineering like removing multicollinear features, encoding categorical features, log transform skewed features, obtaining district from address, and handling outliers.
+* Perform cleaning on some columns: Integer extraction, remove row with missing value, iterative imputing with Bayesian Ridge, and removing outlier.
+* EDA using various plot like distribution plot, histogram, scatter plot, heatmap, and prob plot.
+* Perform geocoding using Google Maps API; extract coordinates from addresses and plot their price heatmap distribution.
+* Various feature engineering like removing multicollinear features, encoding categorical features, log transform skewed features, and parsing out ```address``` to create new ```sub-district```/```kecamatan``` feature.
 * Optimized Linear, Ridge, Random Forest, Gradient Boosing, and XGBoost model using methods like Random Search CV and manually trying different parameters.
 * Built a client facing API using flask and a simple website interface with html,css, js to simulate how users can input apartment data and get their rental price estimate.
 
@@ -67,20 +67,20 @@ After scraping the data there are a lot of cleaning that need to be done so that
 
 ## EDA
 Here are some key highlights from performing EDA:
-1. Skewed distribution of continous variable: *"Apart Size"* & *"Price"* 
+1. Skewed distribution of continous variable: ```Apart Size``` & ```Price``` 
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%201.1.png)
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%201.2.png)
-2. Presence of outlier in our *"Apart Size"* variable [insert scatter plot]
+2. Presence of outlier in our ```Apart Size``` variable [insert scatter plot]
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%202.png)
-4. Multicollinearity among independent variables. High correlated features and features with little to almost no correlation
+4. Multicollinearity among independent variables (```Total Bedroom```, ```Total Bathroom```, ```Apart Size```, ```Max Capacity```). Features with high and low correlation to target variable.
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%203.png)
-5. Geocoding Address and plotting the heatmap distribution of prices in each locations. 
+5. Geocoding Address and plotting the heatmap distribution of prices in each locations. We can see that that location located in Central and South Jakarta region have a higher price distribution.
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/EDA%204.png)
 
 ## Feature Engineering
 - Geocoding coordinates for each respective apartment address.
 - Analyzing and removing multicollinear features using **Variance Inflation Factor (VIF)**
-- Creating a new sub-districts column (*"kecamatan"*) by parsing out keywords found in address and location column.
+- Creating a new sub-districts column (```kecamatan```) by parsing out keywords found in address and location column.
 - Encoding Categorical Data that has no ordinal value using dummy encodoing.
 - Log Transform Skewed Features
 
@@ -93,10 +93,12 @@ First, I select the features that are going to be thrown into our model based on
 - **Ridge Regression** - Tend to work well when most of the predictors impact the response (almost all of our features have high collinearity with the target variable).
 
 ## Model Performance
-Here are the performance from all of the five models, I put in their respective CV error and also training and test error and score to see their variance.
+Here are the performance from all of the five models, I put in their respective CV error and also training/test error and score to see how much variance they have.
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/Model%20Performance.png)
 
 
 ## Productionization
 For the final productionization I pick the XGBRegressor model which shows the lowest RMSE cross-validation error amongst other model. I then build a flask API that was hosted on a local server. The API will take in http request with the list of values and return the estimated rental price. Finally, I build a simple UI using html, css, and js that will allow the user to enter their apartment information and once submitted will send a http request to the flask API which will return the estimated rental price and display it.
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/Web%20Snippet.png)
+
+## Closing Remarks
