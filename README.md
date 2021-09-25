@@ -54,8 +54,10 @@ The result of the scraping is stored in the *'travelio.csv'* file. The file cont
 * Furnish Type
 * Price
 
-[To see the code alongisde in-depth explanation of the whole model building process please click on this link](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/ApartmentRental%20Prediction.ipynb)
 
+[To see the code alongisde in-depth explanation of the whole model building process please checkout this notebook](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/ApartmentRental%20Prediction.ipynb)
+
+## Data Cleaning
 After scraping the data there are a lot of cleaning that need to be done so that it's usable by the model. Here are some cleaning process I've perfromed throughout the entire project:
 - Remove rows with missing address
 - Parsed numeric data from price, apart size, max capacity, and max watt column.
@@ -92,9 +94,9 @@ First, I select the features that are going to be thrown into our model based on
 
 ## Model Performance
 Here are the performance from all of the five models, I put in their respective CV error and also training and test error and score to see their variance.
-[insert model performance]
+![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/Model%20Performance.png)
 
 
 ## Productionization
 For the final productionization I pick the XGBRegressor model which shows the lowest RMSE cross-validation error amongst other model. I then build a flask API that was hosted on a local server. The API will take in http request with the list of values and return the estimated rental price. Finally, I build a simple UI using html, css, and js that will allow the user to enter their apartment information and once submitted will send a http request to the flask API which will return the estimated rental price and display it.
-[insert photo ]
+![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/Web%20Snippet.png)
