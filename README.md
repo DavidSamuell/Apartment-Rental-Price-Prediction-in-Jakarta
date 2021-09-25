@@ -38,6 +38,8 @@
 ## Web Scraping
 [To see the code please click on this link](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/travelioscrapper.ipynb)
 
+To obtain the data I decided to scrape it from travelio website which is a website where people can advertise properties available for rent. This include apartment, house, villa, etc. The scrapping itself is performed on whatever apartments available for rent on the date of August 13 2021.
+
 For the web scrapping process I decided to use Selenium since the travelio website require some user interaction to extract the necessary data. This is my first time trying out Selenium to scrape website and I learnt a lot of new stuff like performing action, extracting information, and how to deal with infinite scrolling page.
 
 The result of the scraping is stored in the **travelio.csv** file. The file contain 800+ apartment information where each row containing:
@@ -111,3 +113,4 @@ For the final productionization I pick the XGBRegressor model which shows the lo
 ![alt text](https://github.com/DAKINGBEEMBUP/Apartment-Rental-Price-Prediction-in-Jakarta/blob/main/Snippet/Web%20Snippet.png)
 
 ## Closing Remarks
+Overall this project has been an interesting experience from me, I learnt tons of new things like how to scrape my own data from website using Selenium and Beautfiul Soup, geocoding with Google Maps API, learning about linear regression assumptions, and optimizing different models with RandomSearch CV. Unfortunately, event though most of our models achieve a reasonably good performance on the test set there is sign of high variance in model that uses ensemble learning method, this is indicated by the noticeable difference between training and test error/score. The prime suspect for this phenomenon is the insufficient amount of data, which to be fair is limited by the amount of apartment listed on the website in that particular date. Given more chances, maybe next time I could try obtaining more data by scraping from different dates. But, this will pose its own challenges as there may be lots of duplicate item and only a few new apartments.
