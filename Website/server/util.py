@@ -53,5 +53,5 @@ def get_data_columns():
 if __name__ == '__main__':
     load_saved_artifacts()
     
-    # print(get_estimated_price(2, 54, 1500, 'Full Furnished', 'Tebet'))
-    # print(get_estimated_price(2, 35, 1500, 'Unfurnished', 'Setiabudi'))
+    print(get_estimated_price(2, 54, 1500, 'Full Furnished', 'Tebet'))
+    print(get_estimated_price(2, 35, 1500, 'Unfurnished', 'Setiabudi'))
